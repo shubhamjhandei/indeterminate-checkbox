@@ -215,7 +215,7 @@ public class IndeterminateCheckBox extends AppCompatCheckBox
 
         SavedState ss = new SavedState(superState);
 
-        ss.indeterminate = getState();
+        ss.indeterminate = isIndeterminate();
         return ss;
     }
 
@@ -224,7 +224,7 @@ public class IndeterminateCheckBox extends AppCompatCheckBox
         SavedState ss = (SavedState) state;
 
         super.onRestoreInstanceState(ss.getSuperState());
-        setState(ss.indeterminate);
+        setIndeterminate(ss.indeterminate);
         requestLayout();
     }
 }
